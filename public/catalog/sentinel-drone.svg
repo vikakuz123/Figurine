@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="64" fill="#050B18"/>
+  <circle cx="300" cy="250" r="220" fill="#94C7FF" fill-opacity="0.22"/>
+  <circle cx="925" cy="665" r="225" fill="#2F78FF" fill-opacity="0.17"/>
+  <rect x="190" y="120" width="820" height="660" rx="44" fill="#0C1734" stroke="#9BCFFF" stroke-opacity="0.28"/>
+  <ellipse cx="600" cy="610" rx="170" ry="32" fill="#081124"/>
+  <rect x="586" y="360" width="28" height="250" rx="14" fill="#94C7FF"/>
+  <path d="M450 370C450 300 510 250 600 250C690 250 750 300 750 370H450Z" fill="#EAF4FF"/>
+  <circle cx="600" cy="455" r="26" fill="#FFF3C4"/>
+  <text x="120" y="820" fill="#EAF4FF" font-size="72" font-family="Arial">Nordic Lamp</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="64" fill="#050A19"/>
+  <circle cx="290" cy="250" r="210" fill="#5BB2FF" fill-opacity="0.22"/>
+  <circle cx="925" cy="680" r="220" fill="#1C5FE3" fill-opacity="0.16"/>
+  <rect x="190" y="120" width="820" height="660" rx="44" fill="#0A1431" stroke="#6FB7FF" stroke-opacity="0.3"/>
+  <circle cx="530" cy="450" r="120" fill="#5BB2FF"/>
+  <circle cx="670" cy="390" r="70" fill="#EAF4FF"/>
+  <path d="M730 410C770 350 835 360 860 430" stroke="#DCEEFF" stroke-width="22" stroke-linecap="round"/>
+  <path d="M650 315L690 235L730 320" fill="#5BB2FF"/>
+  <path d="M590 300L625 220L665 305" fill="#5BB2FF"/>
+  <rect x="420" y="560" width="360" height="68" rx="34" fill="#071022"/>
+  <text x="120" y="820" fill="#EAF4FF" font-size="72" font-family="Arial">Sleepy Cat</text>
+</svg>

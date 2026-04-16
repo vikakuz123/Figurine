@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="64" fill="#071022"/>
+  <circle cx="280" cy="230" r="210" fill="#2F78FF" fill-opacity="0.22"/>
+  <circle cx="940" cy="700" r="220" fill="#6FB7FF" fill-opacity="0.16"/>
+  <rect x="190" y="120" width="820" height="660" rx="44" fill="#0C1736" stroke="#3A79FF" stroke-opacity="0.32"/>
+  <rect x="470" y="320" width="260" height="220" rx="20" fill="#EAF4FF"/>
+  <path d="M430 350L600 200L770 350V380H430V350Z" fill="#2F78FF"/>
+  <rect x="565" y="410" width="70" height="130" rx="10" fill="#2F78FF"/>
+  <rect x="470" y="560" width="260" height="60" rx="30" fill="#081124"/>
+  <text x="120" y="820" fill="#EAF4FF" font-size="72" font-family="Arial">Scandi House</text>
+</svg>
