@@ -1,9 +1,6 @@
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/add-to-cart-button";
-import { ModelDownloads } from "@/components/model-downloads";
 import { ProductViewer3D } from "@/components/product-viewer-3d";
-import { getSessionUser } from "@/lib/auth";
-import { hasUserPurchasedSlug } from "@/lib/db";
 import { getProductBySlug, getProducts } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
 
@@ -23,15 +20,6 @@ export default async function ProductPage({
   if (!product) {
     notFound();
   }
-
-  const user = await getSessionUser();
-  const purchased =
-    user?.role === "buyer" ? await hasUserPurchasedSlug(user.id, product.slug) : false;
-  const canDownload =
-    purchased ||
-    (user?.role === "seller" &&
-      product.source === "seller" &&
-      product.sellerId === user.id);
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
@@ -66,11 +54,6 @@ export default async function ProductPage({
 
           <div className="mt-8 flex flex-col gap-4">
             <AddToCartButton product={product} />
-            <ModelDownloads
-              fileBase={product.fileBase}
-              name={product.name}
-              canDownload={Boolean(canDownload)}
-            />
           </div>
         </div>
       </div>
