@@ -2,7 +2,10 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getSessionUser } from "@/lib/auth";
 import { getOrdersByUser } from "@/lib/db";
+import { getProducts } from "@/lib/products";
 import { formatPrice } from "@/lib/utils";
+
+const formats = ["stl", "obj", "glb"] as const;
 
 export default async function OrdersPage() {
   const user = await getSessionUser();
@@ -15,7 +18,8 @@ export default async function OrdersPage() {
     redirect("/profile");
   }
 
-  const orders = await getOrdersByUser(user.id);
+  const [orders, products] = await Promise.all([getOrdersByUser(user.id), getProducts()]);
+  const productsBySlug = new Map(products.map((product) => [product.slug, product]));
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
@@ -63,27 +67,46 @@ export default async function OrdersPage() {
                     {order.city}, {order.address}
                   </p>
                 </div>
+
                 <div className="rounded-[24px] border border-line bg-page/40 p-5">
                   <p className="text-xs uppercase tracking-[0.25em] text-textMuted">Файлы</p>
                   <div className="mt-3 space-y-3">
-                    {order.items.map((item) => (
-                      <div key={item.id} className="rounded-2xl border border-line px-4 py-3">
-                        <div className="flex flex-wrap items-center justify-between gap-3">
-                          <div>
-                            <p className="font-medium text-text">{item.productName}</p>
-                            <p className="text-sm text-textMuted">
-                              {item.quantity} шт. • {formatPrice(item.unitPrice)}
-                            </p>
+                    {order.items.map((item) => {
+                      const product = productsBySlug.get(item.productSlug);
+                      const fileBase = product?.fileBase || item.productSlug;
+
+                      return (
+                        <div key={item.id} className="rounded-2xl border border-line px-4 py-4">
+                          <div className="flex flex-wrap items-start justify-between gap-3">
+                            <div>
+                              <p className="font-medium text-text">{item.productName}</p>
+                              <p className="text-sm text-textMuted">
+                                {item.quantity} шт. • {formatPrice(item.unitPrice)}
+                              </p>
+                            </div>
+                            <Link
+                              href={`/catalog/${item.productSlug}`}
+                              className="text-sm text-accentSoft"
+                            >
+                              Открыть модель
+                            </Link>
                           </div>
-                          <Link
-                            href={`/catalog/${item.productSlug}`}
-                            className="text-sm text-accentSoft"
-                          >
-                            Открыть модель
-                          </Link>
+
+                          <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                            {formats.map((format) => (
+                              <a
+                                key={format}
+                                href={`/models/${fileBase}.${format}`}
+                                download
+                                className="rounded-2xl border border-line px-4 py-3 text-sm text-text transition hover:border-blue-400/25 hover:bg-blue-500/10"
+                              >
+                                {item.productName} .{format}
+                              </a>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </div>
