@@ -44,7 +44,7 @@ export function Hero() {
               New
             </div>
           </div>
-          <ProductViewer3D modelType={spotlight.modelType} accent={spotlight.accent} />
+          <ProductViewer3D fileBase={spotlight.fileBase} />
         </div>
       </div>
     </section>

@@ -26,22 +26,22 @@ const productVisuals: Record<
   { image: string; accent: string; fileBase: string }
 > = {
   house: {
-    image: "/catalog/house-cover.svg",
+    image: "/catalog/house-render.png",
     accent: "#4aa3ff",
     fileBase: "house"
   },
   cat: {
-    image: "/catalog/cat-cover.svg",
+    image: "/catalog/cat-render.png",
     accent: "#79c1ff",
     fileBase: "cat"
   },
   chair: {
-    image: "/catalog/chair-cover.svg",
+    image: "/catalog/chair-render.png",
     accent: "#5cb7ff",
     fileBase: "chair"
   },
   lamp: {
-    image: "/catalog/lamp-cover.svg",
+    image: "/catalog/lamp-render.png",
     accent: "#a4d8ff",
     fileBase: "lamp"
   },
@@ -51,7 +51,7 @@ const productVisuals: Record<
     fileBase: "bunny"
   },
   mug: {
-    image: "/catalog/mug-cover.svg",
+    image: "/catalog/mag-render.png",
     accent: "#8ad0ff",
     fileBase: "mag"
   }
