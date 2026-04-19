@@ -26,148 +26,129 @@ const productVisuals: Record<
   { image: string; accent: string; fileBase: string }
 > = {
   house: {
-    image: "/catalog/neon-guardian.svg",
-    accent: "#2f78ff",
-    fileBase: "scandi-house"
+    image: "/catalog/house-cover.svg",
+    accent: "#4aa3ff",
+    fileBase: "house"
   },
   cat: {
-    image: "/catalog/abyss-mage.svg",
-    accent: "#5bb2ff",
-    fileBase: "sleepy-cat"
+    image: "/catalog/cat-cover.svg",
+    accent: "#79c1ff",
+    fileBase: "cat"
   },
   chair: {
-    image: "/catalog/cyber-cat-rider.svg",
-    accent: "#6fb7ff",
-    fileBase: "mini-chair"
+    image: "/catalog/chair-cover.svg",
+    accent: "#5cb7ff",
+    fileBase: "chair"
   },
   lamp: {
-    image: "/catalog/sentinel-drone.svg",
-    accent: "#94c7ff",
-    fileBase: "nordic-lamp"
+    image: "/catalog/lamp-cover.svg",
+    accent: "#a4d8ff",
+    fileBase: "lamp"
   },
   bunny: {
-    image: "/catalog/blue-ronin.svg",
-    accent: "#3f8cff",
-    fileBase: "soft-bunny"
+    image: "/catalog/cat-cover.svg",
+    accent: "#8cc5ff",
+    fileBase: "bunny"
   },
   mug: {
-    image: "/catalog/quantum-scout.svg",
-    accent: "#7cc6ff",
-    fileBase: "cozy-mug"
+    image: "/catalog/mug-cover.svg",
+    accent: "#8ad0ff",
+    fileBase: "mag"
   }
 };
 
 const baseProducts: StoreProduct[] = [
   {
     id: "p-1",
-    slug: "scandi-house",
-    name: "Scandi House",
+    slug: "house",
+    name: "House",
     category: "Интерьер",
     price: 3900,
     rating: 4.9,
     image: productVisuals.house.image,
     accent: productVisuals.house.accent,
-    material: "Фотополимер",
+    material: "Blender model",
     height: "18 см",
-    tags: ["домик", "декор", "полка"],
-    shortDescription: "Минималистичный декоративный домик для полки, стола или витрины.",
+    tags: ["домик", "интерьер", "декор"],
+    shortDescription: "Декоративная модель домика для полки, витрины или интерьерной композиции.",
     description:
-      "Аккуратная интерьерная фигурка в форме домика с чистыми линиями и гладкой поверхностью. Подходит для современного интерьера, подарочных наборов и уютного декора.",
+      "Компактная 3D-модель домика с аккуратным силуэтом и чистой формой. Подходит для интерьерных наборов, декоративной печати и оформления домашнего пространства.",
     modelType: "house",
     source: "catalog",
     fileBase: productVisuals.house.fileBase
   },
   {
     id: "p-2",
-    slug: "sleepy-cat",
-    name: "Sleepy Cat",
+    slug: "cat",
+    name: "Cat",
     category: "Животные",
     price: 3500,
     rating: 4.8,
     image: productVisuals.cat.image,
     accent: productVisuals.cat.accent,
-    material: "Смола",
+    material: "Blender model",
     height: "14 см",
-    tags: ["кот", "уют", "декор"],
-    shortDescription: "Статуэтка спящего кота в спокойной округлой форме.",
+    tags: ["кот", "фигурка", "декор"],
+    shortDescription: "Модель кота для домашнего декора, коллекции или печати.",
     description:
-      "Небольшая декоративная фигурка кота с мягким силуэтом и приятными пропорциями. Хорошо смотрится на рабочем столе, комоде или в домашней коллекции.",
+      "Выразительная 3D-модель кота с мягким силуэтом и спокойной посадкой. Хорошо подходит для интерьерных фигурок, сувенирных наборов и небольших коллекций.",
     modelType: "cat",
     source: "catalog",
     fileBase: productVisuals.cat.fileBase
   },
   {
     id: "p-3",
-    slug: "mini-chair",
-    name: "Mini Chair",
+    slug: "chair",
+    name: "Chair",
     category: "Мебель",
     price: 3200,
     rating: 4.7,
     image: productVisuals.chair.image,
     accent: productVisuals.chair.accent,
-    material: "PLA Premium",
+    material: "Blender model",
     height: "16 см",
-    tags: ["стул", "макет", "дизайн"],
-    shortDescription: "Декоративная миниатюра стула с лаконичным современным силуэтом.",
+    tags: ["стул", "мебель", "миниатюра"],
+    shortDescription: "Лаконичная модель стула для визуализации, витрины или 3D-печати.",
     description:
-      "Фигурка в виде дизайнерского стула с четкой геометрией и устойчивой формой. Отличный вариант для коллекций миниатюр, фотозон и интерьерных композиций.",
+      "Минималистичная 3D-модель стула с понятной геометрией и аккуратными пропорциями. Подходит для предметных подборок, макетов интерьера и декоративных проектов.",
     modelType: "chair",
     source: "catalog",
     fileBase: productVisuals.chair.fileBase
   },
   {
     id: "p-4",
-    slug: "nordic-lamp",
-    name: "Nordic Lamp",
+    slug: "lamp",
+    name: "Lamp",
     category: "Интерьер",
     price: 4100,
-    rating: 5,
+    rating: 4.9,
     image: productVisuals.lamp.image,
     accent: productVisuals.lamp.accent,
-    material: "Литьевая смола",
+    material: "Blender model",
     height: "22 см",
-    tags: ["лампа", "декор", "сканди"],
-    shortDescription: "Стильная фигурка лампы в скандинавском стиле.",
+    tags: ["лампа", "освещение", "декор"],
+    shortDescription: "Декоративная модель лампы для интерьерной сцены или 3D-печати.",
     description:
-      "Элегантная декоративная модель настольной лампы с тонкой стойкой и широким плафоном. Подходит для интерьерных наборов и эстетичных витрин.",
+      "Аккуратная 3D-модель лампы с простой и выразительной формой. Подходит для визуализации интерьера, настольного декора и самостоятельной печати.",
     modelType: "lamp",
     source: "catalog",
     fileBase: productVisuals.lamp.fileBase
   },
   {
     id: "p-5",
-    slug: "soft-bunny",
-    name: "Soft Bunny",
-    category: "Животные",
-    price: 3400,
-    rating: 4.6,
-    image: productVisuals.bunny.image,
-    accent: productVisuals.bunny.accent,
-    material: "Фотополимер",
-    height: "15 см",
-    tags: ["заяц", "детская", "декор"],
-    shortDescription: "Небольшая фигурка зайца с мягким силуэтом и длинными ушами.",
-    description:
-      "Спокойная интерьерная фигурка зайца с компактной формой и аккуратной подставкой. Хорошо подходит для домашнего декора, подарков и сезонных композиций.",
-    modelType: "bunny",
-    source: "catalog",
-    fileBase: productVisuals.bunny.fileBase
-  },
-  {
-    id: "p-6",
-    slug: "cozy-mug",
-    name: "Cozy Mug",
+    slug: "mag",
+    name: "Mug",
     category: "Предметы",
     price: 2900,
     rating: 4.8,
     image: productVisuals.mug.image,
     accent: productVisuals.mug.accent,
-    material: "PLA Premium",
+    material: "Blender model",
     height: "13 см",
-    tags: ["кружка", "кухня", "уют"],
-    shortDescription: "Декоративная фигурка кружки с ручкой и плавными линиями.",
+    tags: ["кружка", "предмет", "кухня"],
+    shortDescription: "Простая 3D-модель кружки для коллекции, рендера или печати.",
     description:
-      "Минималистичная фигурка кружки для витрины, полки или подарочного набора. Сдержанная форма делает ее универсальной для разных интерьерных подборок.",
+      "Универсальная 3D-модель кружки с плавным силуэтом и удобной формой. Хорошо смотрится в каталоге предметов, декоративных сценах и проектах для печати.",
     modelType: "mug",
     source: "catalog",
     fileBase: productVisuals.mug.fileBase

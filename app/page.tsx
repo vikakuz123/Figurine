@@ -16,8 +16,8 @@ export default async function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <SectionTitle
           eyebrow="Каталог"
-          title="Популярные модели для дома, полки и рабочего пространства"
-          description="В подборке собраны востребованные 3D-модели с карточками товаров, просмотром в 3D и доступом к файлам после покупки."
+          title="Актуальные модели на основе твоих файлов"
+          description="Старые фигурки убраны из основного каталога. Теперь на главной странице показываются домик, кот, стул, лампа и кружка."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {products.slice(0, 3).map((product) => (
@@ -29,8 +29,8 @@ export default async function HomePage() {
       <section id="about" className="mx-auto max-w-7xl px-6 py-20">
         <SectionTitle
           eyebrow="О магазине"
-          title="Черно-синяя витрина 3D-моделей для покупки и публикации"
-          description="Покупатели выбирают модели, оформляют заказ и скачивают файлы после подтверждения. Продавцы публикуют свои работы прямо через сайт."
+          title="Витрина 3D-моделей для покупки, просмотра и дальнейшей доработки"
+          description="Сайт уже подготовлен под реальные объекты из Blender и больше не привязан к старой коллекции фигурок."
         />
         <div className="mt-10">
           <AboutGrid />
@@ -40,8 +40,8 @@ export default async function HomePage() {
       <section id="features" className="mx-auto max-w-7xl px-6 py-20">
         <SectionTitle
           eyebrow="Преимущества"
-          title="Поиск, сортировка, 3D-просмотр и история покупок в одном интерфейсе"
-          description="Каждая модель доступна в каталоге, на отдельной странице и в личном кабинете покупателя или продавца."
+          title="Поиск, карточки товаров и 3D-просмотр в одном интерфейсе"
+          description="Каталог можно дальше развивать: добавлять рендеры, новые товары и реальные экспортированные файлы моделей."
         />
         <div className="mt-10">
           <FeatureGrid />

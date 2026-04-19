@@ -10,13 +10,13 @@ export function Hero() {
       <div className="absolute inset-0 bg-hero-grid bg-hero-grid opacity-70" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div>
-          <p className="text-sm uppercase tracking-[0.45em] text-accentSoft">3D Store Objects</p>
+          <p className="text-sm uppercase tracking-[0.45em] text-accentSoft">3D Model Store</p>
           <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-tight text-text md:text-7xl">
-            Каталог базовых 3D-фигур и интерьерных моделей
+            Каталог 3D-моделей на основе твоих объектов из Blender
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-textMuted">
-            Выбирайте домики, животных, лампы, кружки и другие декоративные объекты, смотрите их
-            в 3D и оформляйте заказ прямо на сайте.
+            В каталоге собраны домик, кот, стул, лампа и кружка. Каждую модель можно открыть на
+            отдельной странице, рассмотреть в 3D и добавить в заказ.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -29,7 +29,7 @@ export function Hero() {
               href="#about"
               className="rounded-full border border-line px-6 py-3 text-sm text-text transition hover:border-blue-400/30 hover:bg-blue-500/10"
             >
-              О магазине
+              О проекте
             </a>
           </div>
         </div>
@@ -41,7 +41,7 @@ export function Hero() {
               <h2 className="mt-2 text-2xl font-semibold text-text">{spotlight.name}</h2>
             </div>
             <div className="rounded-full border border-blue-400/20 px-3 py-1 text-sm text-accentSoft">
-              Featured
+              New
             </div>
           </div>
           <ProductViewer3D modelType={spotlight.modelType} accent={spotlight.accent} />
