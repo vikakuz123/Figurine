@@ -24,11 +24,9 @@ export function SellerProductForm() {
       setError("");
       setSuccess("");
 
-      const payload = Object.fromEntries(formData.entries());
       const response = await fetch("/api/seller/products", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: formData
       });
 
       const data = await response.json().catch(() => ({}));
@@ -39,7 +37,7 @@ export function SellerProductForm() {
         return;
       }
 
-      setSuccess("Модель добавлена в каталог.");
+      setSuccess("Модель опубликована в каталоге.");
       setLoading(false);
       router.refresh();
     } catch {
@@ -108,12 +106,62 @@ export function SellerProductForm() {
         placeholder="Короткое описание"
         className="w-full rounded-2xl border border-line bg-page px-4 py-3 text-sm text-text outline-none placeholder:text-textMuted focus:border-blue-400/30"
       />
+
       <textarea
         name="description"
         rows={5}
         placeholder="Подробное описание модели"
         className="w-full rounded-2xl border border-line bg-page px-4 py-3 text-sm text-text outline-none placeholder:text-textMuted focus:border-blue-400/30"
       />
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <label className="grid gap-2 rounded-2xl border border-line bg-page/60 p-4 text-sm text-text">
+          <span>Обложка товара (PNG, JPG, WEBP)</span>
+          <input
+            name="previewImage"
+            type="file"
+            accept=".png,.jpg,.jpeg,.webp"
+            className="text-sm text-textMuted file:mr-4 file:rounded-full file:border-0 file:bg-accent file:px-4 file:py-2 file:text-white"
+          />
+        </label>
+
+        <label className="grid gap-2 rounded-2xl border border-line bg-page/60 p-4 text-sm text-text">
+          <span>Файл для 3D-просмотра (GLB)</span>
+          <input
+            name="glbFile"
+            type="file"
+            accept=".glb"
+            className="text-sm text-textMuted file:mr-4 file:rounded-full file:border-0 file:bg-accent file:px-4 file:py-2 file:text-white"
+          />
+        </label>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        <label className="grid gap-2 rounded-2xl border border-line bg-page/60 p-4 text-sm text-text">
+          <span>Файл для скачивания (OBJ)</span>
+          <input
+            name="objFile"
+            type="file"
+            accept=".obj"
+            className="text-sm text-textMuted file:mr-4 file:rounded-full file:border-0 file:bg-accent file:px-4 file:py-2 file:text-white"
+          />
+        </label>
+
+        <label className="grid gap-2 rounded-2xl border border-line bg-page/60 p-4 text-sm text-text">
+          <span>Файл для скачивания (STL)</span>
+          <input
+            name="stlFile"
+            type="file"
+            accept=".stl"
+            className="text-sm text-textMuted file:mr-4 file:rounded-full file:border-0 file:bg-accent file:px-4 file:py-2 file:text-white"
+          />
+        </label>
+      </div>
+
+      <p className="text-sm leading-6 text-textMuted">
+        GLB нужен для просмотра модели в браузере. OBJ и STL будут доступны покупателю в
+        истории заказов после оформления покупки.
+      </p>
 
       {error ? <p className="text-sm text-rose-300">{error}</p> : null}
       {success ? <p className="text-sm text-emerald-300">{success}</p> : null}

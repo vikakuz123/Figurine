@@ -21,10 +21,15 @@ export default async function ProductPage({
     notFound();
   }
 
+  const modelUrl =
+    product.source === "seller" && product.glbKey
+      ? `/api/assets/${product.slug}?type=glb`
+      : `/models/${product.fileBase}.glb`;
+
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
       <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-        <ProductViewer3D fileBase={product.fileBase} />
+        <ProductViewer3D modelUrl={modelUrl} />
         <div className="rounded-[30px] border border-line bg-panel/65 p-5 sm:p-8">
           <p className="text-sm uppercase tracking-[0.35em] text-accentSoft">{product.category}</p>
           <h1 className="mt-4 text-3xl font-semibold text-text sm:text-4xl">{product.name}</h1>

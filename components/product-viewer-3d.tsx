@@ -28,12 +28,12 @@ function Scene({ modelPath }: { modelPath: string }) {
   );
 }
 
-export function ProductViewer3D({ fileBase }: { fileBase: string }) {
+export function ProductViewer3D({ modelUrl }: { modelUrl: string }) {
   return (
     <div className="h-[360px] overflow-hidden rounded-[28px] border border-line bg-[radial-gradient(circle_at_top,rgba(62,118,255,0.28),transparent_40%),linear-gradient(180deg,#0b132b,#040816)]">
       <Canvas camera={{ position: [2.8, 1.8, 4.4], fov: 42 }}>
         <Suspense fallback={null}>
-          <Scene modelPath={`/models/${fileBase}.glb`} />
+          <Scene modelPath={modelUrl} />
         </Suspense>
       </Canvas>
     </div>

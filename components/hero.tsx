@@ -44,7 +44,7 @@ export function Hero() {
               New
             </div>
           </div>
-          <ProductViewer3D fileBase={spotlight.fileBase} />
+          <ProductViewer3D modelUrl={`/models/${spotlight.fileBase}.glb`} />
         </div>
       </div>
     </section>

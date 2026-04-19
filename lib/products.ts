@@ -19,6 +19,10 @@ export type StoreProduct = {
   sellerId?: string;
   sellerName?: string;
   fileBase: string;
+  previewImageKey?: string | null;
+  glbKey?: string | null;
+  objKey?: string | null;
+  stlKey?: string | null;
 };
 
 const productVisuals: Record<
@@ -165,7 +169,7 @@ function sellerToStoreProduct(product: SellerProductRecord): StoreProduct {
     category: product.category,
     price: product.price,
     rating: product.rating,
-    image: visuals.image,
+    image: product.previewImageKey ? `/api/assets/${product.slug}?type=preview` : visuals.image,
     accent: product.accent || visuals.accent,
     material: product.material,
     height: product.height,
@@ -176,7 +180,11 @@ function sellerToStoreProduct(product: SellerProductRecord): StoreProduct {
     source: "seller",
     sellerId: product.sellerId,
     sellerName: product.sellerName,
-    fileBase: visuals.fileBase
+    fileBase: visuals.fileBase,
+    previewImageKey: product.previewImageKey,
+    glbKey: product.glbKey,
+    objKey: product.objKey,
+    stlKey: product.stlKey
   };
 }
 

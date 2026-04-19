@@ -11,6 +11,7 @@
     "db:seed": "node scripts/seed-postgres.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1032.0",
     "@react-three/drei": "^10.0.7",
     "@react-three/fiber": "^9.1.2",
     "bcryptjs": "^3.0.2",

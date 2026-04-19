@@ -29,6 +29,10 @@ type SellerProductRow = {
   short_description: string;
   description: string;
   model_type: ModelType;
+  preview_image_key: string | null;
+  glb_key: string | null;
+  obj_key: string | null;
+  stl_key: string | null;
   created_at: Date | string;
 };
 
@@ -71,6 +75,10 @@ export type SellerProductRecord = {
   shortDescription: string;
   description: string;
   modelType: ModelType;
+  previewImageKey?: string | null;
+  glbKey?: string | null;
+  objKey?: string | null;
+  stlKey?: string | null;
   createdAt: Date;
 };
 
@@ -148,6 +156,10 @@ function mapSellerProduct(row: SellerProductRow): SellerProductRecord {
     shortDescription: row.short_description,
     description: row.description,
     modelType: row.model_type,
+    previewImageKey: row.preview_image_key,
+    glbKey: row.glb_key,
+    objKey: row.obj_key,
+    stlKey: row.stl_key,
     createdAt: new Date(row.created_at)
   };
 }
@@ -185,8 +197,32 @@ async function runMigrations(client: Pool | PoolClient) {
       short_description TEXT NOT NULL,
       description TEXT NOT NULL,
       model_type TEXT NOT NULL,
+      preview_image_key TEXT,
+      glb_key TEXT,
+      obj_key TEXT,
+      stl_key TEXT,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
+  `);
+
+  await client.query(`
+    ALTER TABLE custom_products
+    ADD COLUMN IF NOT EXISTS preview_image_key TEXT
+  `);
+
+  await client.query(`
+    ALTER TABLE custom_products
+    ADD COLUMN IF NOT EXISTS glb_key TEXT
+  `);
+
+  await client.query(`
+    ALTER TABLE custom_products
+    ADD COLUMN IF NOT EXISTS obj_key TEXT
+  `);
+
+  await client.query(`
+    ALTER TABLE custom_products
+    ADD COLUMN IF NOT EXISTS stl_key TEXT
   `);
 
   await client.query(`
@@ -344,6 +380,10 @@ export async function createSellerProduct(product: {
   shortDescription: string;
   description: string;
   modelType: ModelType;
+  previewImageKey?: string | null;
+  glbKey?: string | null;
+  objKey?: string | null;
+  stlKey?: string | null;
 }) {
   const pool = getPool();
 
@@ -358,9 +398,9 @@ export async function createSellerProduct(product: {
       `
         INSERT INTO custom_products (
           id, seller_id, slug, name, category, price, accent, material, height,
-          tags, short_description, description, model_type
+          tags, short_description, description, model_type, preview_image_key, glb_key, obj_key, stl_key
         )
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
       `,
       [
         productId,
@@ -375,7 +415,11 @@ export async function createSellerProduct(product: {
         product.tags,
         product.shortDescription,
         product.description,
-        product.modelType
+        product.modelType,
+        product.previewImageKey || null,
+        product.glbKey || null,
+        product.objKey || null,
+        product.stlKey || null
       ]
     );
 
@@ -397,6 +441,10 @@ export async function createSellerProduct(product: {
           cp.short_description,
           cp.description,
           cp.model_type,
+          cp.preview_image_key,
+          cp.glb_key,
+          cp.obj_key,
+          cp.stl_key,
           cp.created_at
         FROM custom_products cp
         JOIN users u ON u.id = cp.seller_id
@@ -439,6 +487,10 @@ export async function getSellerProducts() {
           cp.short_description,
           cp.description,
           cp.model_type,
+          cp.preview_image_key,
+          cp.glb_key,
+          cp.obj_key,
+          cp.stl_key,
           cp.created_at
         FROM custom_products cp
         JOIN users u ON u.id = cp.seller_id
