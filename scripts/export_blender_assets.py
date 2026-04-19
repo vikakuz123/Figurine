@@ -129,12 +129,26 @@ def export_asset(slug, blend_name):
     IMAGE_DIR.mkdir(parents=True, exist_ok=True)
 
     glb_path = MODEL_DIR / f"{slug}.glb"
+    obj_path = MODEL_DIR / f"{slug}.obj"
+    stl_path = MODEL_DIR / f"{slug}.stl"
     png_path = IMAGE_DIR / f"{slug}-render.png"
 
     bpy.ops.export_scene.gltf(
         filepath=str(glb_path),
         export_format="GLB",
         use_selection=False,
+    )
+
+    select_meshes()
+    bpy.ops.wm.obj_export(
+        filepath=str(obj_path),
+        export_selected_objects=True,
+    )
+
+    select_meshes()
+    bpy.ops.wm.stl_export(
+        filepath=str(stl_path),
+        export_selected_objects=True,
     )
 
     bpy.context.scene.render.filepath = str(png_path)
