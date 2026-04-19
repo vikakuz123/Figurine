@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="64" fill="#06101E"/>
+  <circle cx="300" cy="240" r="210" fill="#6FB7FF" fill-opacity="0.24"/>
+  <circle cx="930" cy="690" r="230" fill="#2F78FF" fill-opacity="0.18"/>
+  <rect x="190" y="120" width="820" height="660" rx="44" fill="#0C1734" stroke="#82CAFF" stroke-opacity="0.28"/>
+  <rect x="455" y="430" width="290" height="42" rx="16" fill="#6FB7FF"/>
+  <rect x="485" y="260" width="230" height="150" rx="16" fill="#EAF4FF"/>
+  <rect x="505" y="472" width="22" height="160" rx="11" fill="#DCEEFF"/>
+  <rect x="675" y="472" width="22" height="160" rx="11" fill="#DCEEFF"/>
+  <rect x="455" y="610" width="290" height="20" rx="10" fill="#071022"/>
+  <text x="120" y="820" fill="#EAF4FF" font-size="72" font-family="Arial">Mini Chair</text>
+</svg>
