@@ -16,8 +16,8 @@ export default async function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <SectionTitle
           eyebrow="Каталог"
-          title="Актуальные модели на основе твоих файлов"
-          description="Старые фигурки убраны из основного каталога. Теперь на главной странице показываются домик, кот, стул, лампа и кружка."
+          title="Популярные 3D-модели для интерьера и декора"
+          description="На главной странице представлены актуальные модели из каталога: домик, кот, стул, лампа и кружка."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {products.slice(0, 3).map((product) => (
@@ -29,8 +29,8 @@ export default async function HomePage() {
       <section id="about" className="mx-auto max-w-7xl px-6 py-20">
         <SectionTitle
           eyebrow="О магазине"
-          title="Витрина 3D-моделей для покупки, просмотра и дальнейшей доработки"
-          description="Сайт уже подготовлен под реальные объекты из Blender и больше не привязан к старой коллекции фигурок."
+          title="Витрина 3D-моделей для просмотра, покупки и скачивания"
+          description="Сайт объединяет каталог, 3D-просмотр, корзину и личный кабинет в одном удобном интерфейсе."
         />
         <div className="mt-10">
           <AboutGrid />
@@ -41,7 +41,7 @@ export default async function HomePage() {
         <SectionTitle
           eyebrow="Преимущества"
           title="Поиск, карточки товаров и 3D-просмотр в одном интерфейсе"
-          description="Каталог можно дальше развивать: добавлять рендеры, новые товары и реальные экспортированные файлы моделей."
+          description="Каталог помогает быстро находить нужные модели, сравнивать их и оформлять заказ онлайн."
         />
         <div className="mt-10">
           <FeatureGrid />

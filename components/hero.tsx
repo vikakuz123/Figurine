@@ -12,11 +12,11 @@ export function Hero() {
         <div>
           <p className="text-sm uppercase tracking-[0.45em] text-accentSoft">3D Model Store</p>
           <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-tight text-text md:text-7xl">
-            Каталог 3D-моделей на основе твоих объектов из Blender
+            Каталог стильных 3D-моделей для дома и пространства
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-textMuted">
-            В каталоге собраны домик, кот, стул, лампа и кружка. Каждую модель можно открыть на
-            отдельной странице, рассмотреть в 3D и добавить в заказ.
+            Открывайте карточки товаров, просматривайте модели в 3D, добавляйте понравившиеся
+            позиции в корзину и оформляйте заказ онлайн.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -29,7 +29,7 @@ export function Hero() {
               href="#about"
               className="rounded-full border border-line px-6 py-3 text-sm text-text transition hover:border-blue-400/30 hover:bg-blue-500/10"
             >
-              О проекте
+              О магазине
             </a>
           </div>
         </div>
